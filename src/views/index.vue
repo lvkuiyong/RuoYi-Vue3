@@ -27,7 +27,6 @@
               <li>MyBatis</li>
               <li>Druid</li>
               <li>Fastjson</li>
-              <li>...</li>
             </ul>
           </el-col>
           <el-col :span="6">
@@ -39,7 +38,6 @@
               <li>Axios</li>
               <li>Sass</li>
               <li>Quill</li>
-              <li>...</li>
             </ul>
           </el-col>
         </el-row>
@@ -47,19 +45,8 @@
     </el-row>
     <el-divider />
     <el-row :gutter="20">
-      <el-col :xs="24" :sm="24" :md="12" :lg="8">
-        <el-card class="update-log">
-          <template v-slot:header>
-            <div class="clearfix">
-              <span>联系</span>
-            </div>
-          </template>
-          <div class="body">
-            
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="8">
+
+      <el-col :xs="24" :sm="24" :md="24" :lg="24">
         <el-card class="update-log">
           <template v-slot:header>
             <div class="clearfix">
@@ -96,18 +83,7 @@
           </el-collapse>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="8">
-        <el-card class="update-log">
-          <template v-slot:header>
-            <div class="clearfix">
-              <span>支持</span>
-            </div>
-          </template>
-          <div class="body">
 
-          </div>
-        </el-card>
-      </el-col>
     </el-row>
   </div>
 </template>

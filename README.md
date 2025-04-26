@@ -5,6 +5,23 @@ yarn --registry=https://registry.npmmirror.com
 yarn dev
 ```
 
+## 地址
+
+如参数管理，后台地址配置`@RequestMapping("/system/config")`对应参数管理`url`为`/system/config`
+
+## 数据权限
+
+权限标识配置不对在`菜单管理`配置好权限标识（菜单&按钮）
+
+1. 确认此用户是否已经配置角色
+2. 确认此角色是否已经配置菜单权限
+3. 确认此菜单权限标识是否和后台代码一致
+
+如参数管理
+后台配置`@RequiresPermissions("system:config:view")`对应参数管理权限标识为`system:config:view`
+
+注：如需要角色权限，配置角色权限字符 使用`@RequiresRoles("admin")`
+
 ## 图标使用
 
 项目默认使用了`Font Awesome`和`Glyphicons`字体图标。
@@ -40,9 +57,9 @@ Glyphicons 使用方式
 
 菜单图标会自动引入`@/icons/svg`，放入此文件夹中图标就可以选择了
 
-## 地址
+## 登录页开启注册用户功能
 
-如参数管理，后台地址配置`@RequestMapping("/system/config")`对应参数管理`url`为`/system/config`
+在菜单`参数设置`修改参数键名`sys.account.registerUser`设置`true`即可。默认为`false`关闭。
 
 ## 更换主题皮肤
 
@@ -91,86 +108,6 @@ nav .logo {
 1、点击顶部最右侧个人中心头像，切换为横向菜单。（局部设置）
 
 2、在参数管理设置`主框架页-菜单导航显示风格`，键值为`topnav`为顶部导航菜单。（全局设置）
-
-## 数据权限
-
-权限标识配置不对在`菜单管理`配置好权限标识（菜单&按钮）
-
-1. 确认此用户是否已经配置角色
-2. 确认此角色是否已经配置菜单权限
-3. 确认此菜单权限标识是否和后台代码一致
-
-如参数管理
-后台配置`@RequiresPermissions("system:config:view")`对应参数管理权限标识为`system:config:view`
-
-注：如需要角色权限，配置角色权限字符 使用`@RequiresRoles("admin")`
-
-## 去除文件上传按钮
-
-在一些特定情况不需要文件上传的小图标操作，可以把他们去掉。
-
-这里`layoutTemplates`为上传控件模板，可以在这里重写上传控件中的元素样式
-
-```js
-$("#xxxx").fileinput({
-    ....
-	layoutTemplates: {
-		actionDelete: '',
-		actionUpload: '',
-		actionZoom: '',
-		indicator: ''
-		.....
-	},
-	....
-```
-
-## 去除数据监控广告
-
-服务监控中使用的`Driud`，默认底部有阿里的广告。如果是一个商业项目这个是很不雅也是不允许的
-
-1. 找到本地maven库中的对应的druid-1.1.xx.jar文件，用压缩包软件打开
-2. 找到support/http/resource/js/common.js, 打开找到 buildFooter 方法
-
-```javascript
-this.buildFooter();
-buildFooter : function() {
-	var html ='此处省略一些相关JS代码';
-	$(document.body).append(html);
-},
-```
-
-1. 删除此函数和及初始方法后覆盖文件
-2. 重启项目后，广告就会消失了
-
-## 翻页保留选择
-
-1. 配置`checkbox`选项`field`属性为`state`
-
-```javascript
-{
-	field: 'state',
-	checkbox: true
-},
-```
-
-1. 表格选项`options`添加`rememberSelected`
-
-```javascript
-rememberSelected: true,
-```
-
-## 汉化系统接口Swagger
-
-1. 找到m2/repository/io/springfox/springfox-swagger-ui/x.x.x/springfox-swagger-ui-x.x.x.jar
-2. 修改对应springfox-swagger-ui-x.x.x.jar包内`resources`目录下`swagger-ui.html`，添加如下JS代码
-
-```html
-<!-- 选择中文版 -->
-<script src='webjars/springfox-swagger-ui/lang/translator.js' type='text/javascript'></script>
-<script src='webjars/springfox-swagger-ui/lang/zh-cn.js' type='text/javascript'></script>
-```
-
-1. 本地修改结束后，在覆盖压缩包文件重启就实现汉化了
 
 ## 如何去掉页脚及左侧菜单栏
 
@@ -252,10 +189,6 @@ $('#side-menu').metisMenu({
     toggle: false,
 });
 ```
-
-## 登录页开启注册用户功能
-
-在菜单`参数设置`修改参数键名`sys.account.registerUser`设置`true`即可。默认为`false`关闭。
 
 ## 如何调整首页左侧菜单栏宽度
 
@@ -354,6 +287,73 @@ var isLinkage = false;
 // $dataObj.parents("ul").addClass("in")
 // $dataObj.parents("li").addClass("active").siblings().removeClass("active").find('li').removeClass("active");
 ```
+
+## 去除文件上传按钮
+
+在一些特定情况不需要文件上传的小图标操作，可以把他们去掉。
+
+这里`layoutTemplates`为上传控件模板，可以在这里重写上传控件中的元素样式
+
+```js
+$("#xxxx").fileinput({
+    ....
+	layoutTemplates: {
+		actionDelete: '',
+		actionUpload: '',
+		actionZoom: '',
+		indicator: ''
+		.....
+	},
+	....
+```
+
+## 去除数据监控广告
+
+服务监控中使用的`Driud`，默认底部有阿里的广告。如果是一个商业项目这个是很不雅也是不允许的
+
+1. 找到本地maven库中的对应的druid-1.1.xx.jar文件，用压缩包软件打开
+2. 找到support/http/resource/js/common.js, 打开找到 buildFooter 方法
+
+```javascript
+this.buildFooter();
+buildFooter : function() {
+	var html ='此处省略一些相关JS代码';
+	$(document.body).append(html);
+},
+```
+
+1. 删除此函数和及初始方法后覆盖文件
+2. 重启项目后，广告就会消失了
+
+## 翻页保留选择
+
+1. 配置`checkbox`选项`field`属性为`state`
+
+```javascript
+{
+	field: 'state',
+	checkbox: true
+},
+```
+
+1. 表格选项`options`添加`rememberSelected`
+
+```javascript
+rememberSelected: true,
+```
+
+## 汉化系统接口Swagger
+
+1. 找到m2/repository/io/springfox/springfox-swagger-ui/x.x.x/springfox-swagger-ui-x.x.x.jar
+2. 修改对应springfox-swagger-ui-x.x.x.jar包内`resources`目录下`swagger-ui.html`，添加如下JS代码
+
+```html
+<!-- 选择中文版 -->
+<script src='webjars/springfox-swagger-ui/lang/translator.js' type='text/javascript'></script>
+<script src='webjars/springfox-swagger-ui/lang/zh-cn.js' type='text/javascript'></script>
+```
+
+1. 本地修改结束后，在覆盖压缩包文件重启就实现汉化了
 
 ## **前端国际化流程**
 
