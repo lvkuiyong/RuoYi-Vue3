@@ -2,11 +2,11 @@
   <div class="app-container home">
     <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
-        <h2>企业管理系统</h2>
+
+        <!-- <h2>企业管理系统</h2>
         <p>
           前后端分离的后台管理系统
-        </p>
-
+        </p> -->
 
         <h2>内置功能模块</h2>
         <ol>
@@ -22,9 +22,11 @@
           <li>连接池监视：监视当期系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈</li>
           <li>系统接口：业务代码相关的api接口文档</li>
         </ol>
-        <p>
+
+        <!-- <p>
           <b>当前版本:</b> <span>v{{ version }}</span>
-        </p>
+        </p> -->
+
       </el-col>
 
       <el-col :sm="24" :lg="12" style="padding-left: 50px">
@@ -60,19 +62,20 @@
           </el-col>
         </el-row>
 
-        <h2>主要特性</h2>
+        <!-- <h2>主要特性</h2>
         <ol>
           <li>完全响应式布局（支持电脑、平板、手机等所有主流设备）</li>
           <li>支持按钮及数据权限，可自定义部门数据权限</li>
           <li>对常用js插件进行二次封装，使js代码变得简洁，更加易维护</li>
           <li>完善的XSS防范及脚本过滤，彻底杜绝XSS攻击</li>
           <li>完善的日志记录体系，简单注解即可实现</li>
-        </ol>
+        </ol> -->
+
       </el-col>
     </el-row>
     <el-divider />
-    <el-row :gutter="20">
 
+    <!-- <el-row :gutter="20">
       <el-col :xs="24" :sm="24" :md="24" :lg="24">
         <el-card class="update-log">
           <template v-slot:header>
@@ -106,8 +109,8 @@
           </el-collapse>
         </el-card>
       </el-col>
+    </el-row> -->
 
-    </el-row>
   </div>
 </template>
 
