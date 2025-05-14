@@ -1,121 +1,111 @@
 <template>
   <div class="app-container home">
     <el-row :gutter="20">
-      <el-col :sm="24" :lg="12" style="padding-left: 20px">
+      <el-col :sm="24" :lg="24" style="padding-left: 20px">
+        <div class="feature-card">
+          <h2 class="section-title">系统功能概览</h2>
+          <div class="feature-list">
+            <!-- 部门管理 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                  <path d="M7 12h2v5H7zm4-7h2v12h-2zm4 5h2v7h-2z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>部门管理</h3>
+                <p>配置系统组织机构（公司、部门、小组），树结构展现支持数据权限</p>
+              </div>
+            </div>
+            
+            <!-- 用户管理 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>用户管理</h3>
+                <p>用户是系统操作者，该功能主要完成系统用户配置</p>
+              </div>
+            </div>
+            
+            <!-- 岗位管理 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>岗位管理</h3>
+                <p>配置系统用户所属担任职务</p>
+              </div>
+            </div>
+            
+            <!-- 角色管理 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>角色管理</h3>
+                <p>角色菜单权限分配、设置角色按机构进行数据范围权限划分</p>
+              </div>
+            </div>
 
-        <!-- <h2>企业管理系统</h2>
-        <p>
-          前后端分离的后台管理系统
-        </p> -->
-
-        <h2>内置功能模块</h2>
-        <ol>
-          <li>部门管理：配置系统组织机构（公司、部门、小组），树结构展现支持数据权限</li>
-          <li>用户管理：用户是系统操作者，该功能主要完成系统用户配置</li>
-          <li>岗位管理：配置系统用户所属担任职务</li>
-          <li>角色管理：角色菜单权限分配、设置角色按机构进行数据范围权限划分</li>
-          <li>登录日志：系统登录日志记录查询包含登录异常</li>
-          <li>通知公告：系统通知公告信息发布维护</li>
-          <li>在线用户：当前系统中活跃用户状态监控</li>
-          <li>服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息</li>
-          <li>缓存监控：对系统的缓存信息查询，命令统计等</li>
-          <li>连接池监视：监视当期系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈</li>
-          <li>系统接口：业务代码相关的api接口文档</li>
-        </ol>
-
-        <!-- <p>
-          <b>当前版本:</b> <span>v{{ version }}</span>
-        </p> -->
-
-      </el-col>
-
-      <el-col :sm="24" :lg="12" style="padding-left: 50px">
-        <el-row>
-          <el-col :span="12">
-            <h2>技术选型</h2>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="6">
-            <h4>后端技术</h4>
-            <ul>
-              <li>Spring Boot</li>
-              <li>Spring Security</li>
-              <li>Docker</li>
-              <li>MYSQL</li>
-              <li>Redis</li>
-              <li>MyBatis</li>
-              <li>Druid</li>
-            </ul>
-          </el-col>
-          <el-col :span="6">
-            <h4>前端技术</h4>
-            <ul>
-              <li>Vue.js</li>
-              <li>Node.js</li>
-              <li>Yarn</li>
-              <li>Vite</li>
-              <li>Element Plus</li>
-              <li>Axios</li>
-              <li>Pinia</li>
-            </ul>
-          </el-col>
-        </el-row>
-
-        <!-- <h2>主要特性</h2>
-        <ol>
-          <li>完全响应式布局（支持电脑、平板、手机等所有主流设备）</li>
-          <li>支持按钮及数据权限，可自定义部门数据权限</li>
-          <li>对常用js插件进行二次封装，使js代码变得简洁，更加易维护</li>
-          <li>完善的XSS防范及脚本过滤，彻底杜绝XSS攻击</li>
-          <li>完善的日志记录体系，简单注解即可实现</li>
-        </ol> -->
-
+            <!-- 通知公告 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>通知公告</h3>
+                <p>系统通知公告信息发布维护</p>
+              </div>
+            </div>
+            
+            <!-- 登录日志 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>登录日志</h3>
+                <p>系统登录日志记录查询包含登录异常</p>
+              </div>
+            </div>
+            
+            <!-- 在线用户 -->
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg class="svg-icon" viewBox="0 0 24 24">
+                  <path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V18c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-1.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05.02.01.03.03.04.04 1.14.83 1.93 1.94 1.93 3.41V18c0 .35-.07.69-.18 1H22c.55 0 1-.45 1-1v-1.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>在线用户</h3>
+                <p>当前系统中活跃用户状态监控</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </el-col>
     </el-row>
     <el-divider />
-
-    <!-- <el-row :gutter="20">
-      <el-col :xs="24" :sm="24" :md="24" :lg="24">
-        <el-card class="update-log">
-          <template v-slot:header>
-            <div class="clearfix">
-              <span>更新日志</span>
-            </div>
-          </template>
-          <el-collapse accordion>
-            <el-collapse-item title="v3">
-              <ol>
-                <li>引入路由懒加载、Gzip压缩优化性能。</li>
-                <li>核心组件版本迭代，修复漏洞并增强兼容性。</li>
-                <li>集成 XSS过滤、防重复提交注解、IP黑名单，屏蔽定时任务远程调用。</li>
-                <li>密码策略强化：非法字符验证、错误次数限制、特殊字符兼容。</li>
-                <li>用户管理支持部门分栏拖动、过滤已禁用部门，优化导入校验与数据权限控制。</li>
-                <li>角色权限实时同步缓存，修复禁用后权限未生效问题；菜单支持多级面包屑、TopNav 布局、路由参数配置。</li>
-                <li>数据权限支持多角色合并查询、编程式判断，防止越权访问，菜单权限细化至按钮级别。</li>
-                <li>树表展开/折叠，修复上级菜单显示与关联查询问题。</li>
-                <li>子列表导出、自定义数据处理器。</li>
-                <li>优化导入性能：减少缓存重复查询、兼容大数据量下拉框，修复导出子列表位置与空数组显示问题。</li>
-                <li>新增缓存监控，操作日志记录部门名称、IP 地址及 DELETE 请求参数。</li>
-                <li>日志优化：索引提升查询性能、过滤敏感字段，修复权限更新后缓存不同步问题。</li>
-                <li>布局优化：TopNav 高亮匹配、Mini 布局错乱修复、页签支持关闭指定标签，菜单名称悬停提示。</li>
-                <li>交互细节：导出遮罩层、表单拖拽排序、小屏幕适配，修复内链页面参数丢失与标签页刷新问题。</li>
-                <li>修复 SQL 注入、XSS、反序列化漏洞，移除高危依赖，升级Spring Security。</li>
-                <li>支持多文件批量上传、富文本文件大小限制，修复文件名特殊字符下载与图片透明色显示问题。</li>
-                <li>通用工具：自定义 XSS 校验、国际化配置、密码强度验证。</li>
-                <li>统一组件版本，修复样式冲突，提升组件稳定性。</li>
-              </ol>
-            </el-collapse-item>
-          </el-collapse>
-        </el-card>
-      </el-col>
-    </el-row> -->
-
   </div>
 </template>
 
-<script setup name="Index">
-const version = ref('3')
+<script setup>
+const version = ref('3.8.0')
 
 function goTarget(url) {
   window.open(url, '__blank')
@@ -124,65 +114,104 @@ function goTarget(url) {
 
 <style scoped lang="scss">
 .home {
-  blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 17.5px;
-    border-left: 5px solid #eee;
-  }
-  hr {
-    margin-top: 20px;
+  .section-title {
+    color: #303133;
+    font-size: 20px;
+    font-weight: 500;
     margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
-  }
-  .col-item {
-    margin-bottom: 20px;
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  color: #676a6c;
-  overflow-x: hidden;
-
-  ul {
-    list-style-type: none;
-  }
-
-  h4 {
-    margin-top: 0px;
-  }
-
-  h2 {
-    margin-top: 10px;
-    font-size: 26px;
-    font-weight: 100;
-  }
-
-  p {
-    margin-top: 10px;
-
-    b {
-      font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #409EFF, #67C23A);
+      border-radius: 2px;
     }
   }
-
-  .update-log {
-    ol {
-      display: block;
-      list-style-type: decimal;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      padding-inline-start: 40px;
+  
+  .feature-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+  }
+  
+  .feature-list {
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #EBEEF5;
+      
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .feature-icon {
+        width: 32px;
+        height: 32px;
+        background: #f5f7fa;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        color: #606266;
+        flex-shrink: 0;
+        
+        .svg-icon {
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+        }
+      }
+      
+      .feature-content {
+        flex: 1;
+        
+        h3 {
+          margin: 0 0 4px 0;
+          font-size: 14px;
+          color: #303133;
+          font-weight: 500;
+        }
+        
+        p {
+          margin: 0;
+          font-size: 12px;
+          color: #909399;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  
+  .el-divider {
+    margin: 20px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-card {
+      padding: 15px;
+    }
+    
+    .feature-item {
+      flex-direction: column;
+      
+      .feature-icon {
+        margin-bottom: 8px;
+        margin-right: 0;
+      }
     }
   }
 }
 </style>
-
